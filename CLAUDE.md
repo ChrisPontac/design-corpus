@@ -23,6 +23,12 @@ This file is written so that a fresh LLM session, with no memory of prior conver
 curation exactly where it was left off using only this file and the repository contents. Keep it that way
 — if you and Christopher agree a working practice, record it here, not just in conversation.
 
+**Cross-repo contamination.** If a second repository (e.g. an employer's architecture repo) is attached in
+the same session, treat anything from it exactly like any other asset under "Ingesting a new asset" below
+— full redaction review, explicit placement decision, ledger entry. Never copy content from it into a note
+verbatim just because it's already open and already trusted in context. Being attached to the session is
+not the same as having been reviewed.
+
 ## Structure
 
 - `INDEX.md` — one-line-per-topic index of everything in `notes/`. Keep it current whenever notes change.
