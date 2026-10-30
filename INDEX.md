@@ -2,4 +2,4 @@
 
 One line per note in `notes/`. Keep current — see `CLAUDE.md` for the curation workflow.
 
-(empty — first notes not yet added)
+- [Condition-inclusion DSL](notes/condition-inclusion-dsl.md) — pattern — declarative DSL for grouped condition/constraint inclusion rules, usable for form validation and driving conditional editing behaviour
