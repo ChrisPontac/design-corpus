@@ -3,6 +3,7 @@ slug: condition-inclusion-dsl
 type: pattern
 status: active
 description: Declarative DSL for grouped condition/constraint inclusion rules, usable for both form validation and driving conditional editing behaviour.
+tags: dsl, declarative-rules, forms, validation, permitting, environmental-regulation, conditional-editing
 ---
 
 # Condition-inclusion DSL

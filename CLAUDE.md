@@ -38,8 +38,15 @@ slug: short-kebab-case-id
 type: principle | constraint | pattern | decision | open-question
 status: active | superseded-by:<slug>
 description: one-line summary for the index
+tags: comma-separated free-text keywords
 ---
 ```
+
+`tags` exists for one purpose: recall control, not filing. Christopher is the only person likely to read
+`INDEX.md` directly, and not to find things — an LLM does that from content — but to decide whether a note
+*should* surface when a given topic comes up, even if its content alone wouldn't obviously suggest the
+connection. When consulting the index (see below), treat tags as part of the relevance signal, not
+decoration.
 
 Body content follows. Link related notes inline with `[[slug]]`.
 
@@ -64,13 +71,23 @@ append-only by design). Concretely:
 Christopher will hand you an asset: pasted text, a file, an export (e.g. Sparx EA XMI), a photographed
 day-book page, etc. For each one:
 
-1. **Review for redaction.** Flag anything identifying — organisation names, system names, specific values
+1. **Establish purpose and context.** If Christopher hasn't already said what the asset was originally
+   for, ask before reviewing content — don't rely on it coming up in passing. This informs interpretation,
+   placement, and tag selection (step 4), even when the specific context itself is too identifying to
+   appear in the note.
+2. **Consult the index first.** Read `INDEX.md` (descriptions and tags) to identify plausibly relevant
+   existing notes before deciding placement. Only open those files in full — do not read the entire
+   `notes/` directory for every asset as a default. An asset may be relevant to, and contribute to, more
+   than one existing note.
+3. **Review for redaction.** Flag anything identifying — organisation names, system names, specific values
    or costs — defaulting to *redact* unless obviously harmless. Present flags to Christopher; he confirms
    or overrides each one. Nothing identifying should reach a note.
-2. **Decide placement.** Does this extend an existing note, contradict one (mark superseded, don't delete),
-   trigger a split/merge of existing topics, or genuinely need a new note? Prefer extending over creating.
-3. **Write/update the note(s)** in `notes/`, and update `INDEX.md`.
-4. **Remind Christopher to record the ledger entry.** The provenance record (which source asset fed which
+4. **Decide placement and tags.** Does this extend one or more existing notes, contradict one (mark
+   superseded, don't delete), trigger a split/merge of existing topics, or genuinely need a new note? Prefer
+   extending over creating. Set or widen `tags` using the context from step 1 — including angles the note's
+   own content wouldn't obviously suggest.
+5. **Write/update the note(s)** in `notes/`, and update `INDEX.md` (description and tags).
+6. **Remind Christopher to record the ledger entry.** The provenance record (which source asset fed which
    note, and what was redacted) lives in the separate, private `design-ledger` repository — never in this
    repo, not even privately, because anything committed to a public repo's history is not safely retractable
    later. If `design-ledger` is not attached as a working directory in the current session, prompt Christopher
